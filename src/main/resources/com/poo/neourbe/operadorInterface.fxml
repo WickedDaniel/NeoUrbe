@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="274.0" prefWidth="600.0" style="-fx-background-color: #222831;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo.neourbe.operadorControlador">
+   <children>
+      <SplitPane dividerPositions="0.26360544217687076" layoutX="20.0" layoutY="25.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="186.0" prefWidth="276.0" style="-fx-background-color: transparent; -fx-border-color: #948979; -fx-border-radius: 5px;" stylesheets="@splitPaneSeparator.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="0.0" style="-fx-border-radius: 5px;">
+               <children>
+                  <VBox alignment="TOP_CENTER" layoutX="37.0" layoutY="17.0" prefHeight="253.0" prefWidth="154.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView cache="true" fitHeight="78.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@adminIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="OPERADOR">
+                           <font>
+                              <Font name="Tw Cen MT Bold" size="12.0" />
+                           </font>
+                           <fill>
+                              <LinearGradient>
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.548799991607666" green="0.7008057832717896" blue="0.9800000190734863" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.6805555820465088" green="0.8935185074806213" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <VBox fx:id="acciones" alignment="TOP_CENTER" prefHeight="95.0" prefWidth="127.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="administrarCiudadanos" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Administrar Ciudadanos">
+                                 <font>
+                                    <Font name="Tw Cen MT" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="administrarRobots" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Administrar Robots">
+                                 <font>
+                                    <Font name="Tw Cen MT" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="administrarDrones" layoutX="17.0" layoutY="40.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Administrar Drones">
+                                 <font>
+                                    <Font name="Tw Cen MT" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="generarSimulacion" layoutX="17.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Generar Simulación">
+                                 <font>
+                                    <Font name="Tw Cen MT" size="12.0" />
+                                 </font>
+                              </Button>
+                              <VBox alignment="BOTTOM_CENTER" prefHeight="332.0" prefWidth="127.0" spacing="5.0">
+                                 <children>
+                                    <Button fx:id="cambiarPerfil" layoutX="14.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Cambiar Perfil">
+                                       <font>
+                                          <Font name="Tw Cen MT" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="0.0" style="-fx-border-radius: 5px; -fx-background-color: transparent;" stylesheets="@scrollFrame.css">
+               <children>
+                  <AnchorPane fx:id="panelRobots" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TabPane prefHeight="342.0" prefWidth="418.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <tabs>
+                              <Tab text="Agregar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="299.0" prefWidth="495.0">
+                                       <children>
+                                          <TabPane prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <tabs>
+                                                <Tab text="Crear Robot">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Haga click sobre el boton para agregar un nuevo Robot Asistente" wrappingWidth="443.40367126464844" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                                                     </padding>
+                                                                     <children>
+                                                                        <Button fx:id="agregarRobot" mnemonicParsing="false" prefHeight="25.0" prefWidth="596.0" text="Crear Robot" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Label fx:id="feedbackAgregarRobot" prefHeight="191.0" prefWidth="429.0" wrapText="true" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="10.0" right="10.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Crear Bloque de Robots">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la cantidad de robots que desea agregar:" wrappingWidth="304.40367126464844" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Spinner fx:id="cantidadBloqueRobots" editable="true" prefHeight="25.0" prefWidth="480.0" />
+                                                                        <Button fx:id="agregarRobots" mnemonicParsing="false" prefHeight="25.0" prefWidth="340.0" text="Agregar Robots" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Label fx:id="feedbackAddMultipleRobots" prefHeight="192.0" prefWidth="429.0" wrapText="true" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="10.0" right="10.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                             </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="asignacionRobotTab" text="Asignación">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="411.0">
+                                       <children>
+                                          <TabPane prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <tabs>
+                                                <Tab text="Asignar">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el identificador del ciudadano para asignar un robot:" wrappingWidth="369.0703125" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox layoutX="10.0" layoutY="37.0" spacing="10.0">
+                                                                     <children>
+                                                                        <Spinner fx:id="verCiudadanoID" prefHeight="25.0" prefWidth="314.0" />
+                                                                        <Button fx:id="verificarCiudadano" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Verificar Ciudadano" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione el robot a asignar:" wrappingWidth="423.0703125" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <ComboBox fx:id="robotSeleccionado" prefHeight="25.0" prefWidth="324.0" />
+                                                                        <Button fx:id="asignarRobot" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="211.0" text="Asignar Robot" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Label fx:id="feedbackRobotsAsignados" prefHeight="131.0" prefWidth="441.0" wrapText="true" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="10.0" right="10.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Desasignar">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el identificador del ciudadano para desasignar un robot:" wrappingWidth="369.0703125" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Spinner fx:id="desasignacionSpinner" editable="true" prefHeight="25.0" prefWidth="330.0" />
+                                                                        <Button fx:id="cargarRobotsCiudadano" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Cargar Robots" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione el robot a desasignar:" wrappingWidth="369.0703125" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox layoutX="10.0" layoutY="37.0" spacing="10.0">
+                                                                     <children>
+                                                                        <ChoiceBox fx:id="robotSeleccionadoDesasignar" prefHeight="25.0" prefWidth="330.0" />
+                                                                        <Button fx:id="desasignarRobot" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Deasignar robot" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Label fx:id="feedbackDesasignacion" prefHeight="131.0" prefWidth="441.0" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="10.0" right="10.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                             </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="consultaRobotTab" text="Consultar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="235.0" prefWidth="225.0">
+                                       <children>
+                                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el número de Procesador del robot para consultar su información:" wrappingWidth="419.7369384765625" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="37.0" spacing="10.0">
+                                                   <children>
+                                                      <ComboBox fx:id="robotConsultar" prefHeight="25.0" prefWidth="299.0" />
+                                                      <Button fx:id="consultarRobot" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" text="Consultar" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Label fx:id="feedbackRobots" prefHeight="193.0" prefWidth="411.0" wrapText="true" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="modificarRobotTab" text="Modificar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="235.0" prefWidth="225.0">
+                                       <children>
+                                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el identificador del procesador del robot a modificar:" wrappingWidth="354.4036865234375" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <ComboBox fx:id="robotModificar" prefHeight="25.0" prefWidth="299.0" />
+                                                      <Button fx:id="modificarRobotSeleccionado" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" text="Modificar" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Estado Robot" wrappingWidth="354.4036865234375" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="36.0" spacing="10.0">
+                                                   <children>
+                                                      <ComboBox fx:id="robotModificarEstado" prefHeight="25.0" prefWidth="458.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Label fx:id="feedbackRobotsModificar" prefHeight="213.0" prefWidth="423.0" wrapText="true" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="eliminarRobotTab" text="Eliminar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="411.0">
+                                       <children>
+                                          <VBox layoutX="36.0" layoutY="44.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el número del procesador del robot a eliminar:" wrappingWidth="347.737060546875" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <ComboBox fx:id="robotEliminar" prefHeight="25.0" prefWidth="299.0" />
+                                                      <Button fx:id="eliminarRobot" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" text="Eliminar" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Label fx:id="feedbackRobotEliminado" prefHeight="219.0" prefWidth="437.0" wrapText="true" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelCiudadanos" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="431.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="Agregar">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TabPane prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <tabs>
+                                                <Tab text="Crear Ciudadano">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione el edificio que alberga al Ciudadano nuevo:" wrappingWidth="443.40367126464844" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                                                     </padding>
+                                                                     <children>
+                                                                        <ComboBox fx:id="edificioSeleccionado" prefHeight="25.0" prefWidth="460.0" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                                                     </padding>
+                                                                     <children>
+                                                                        <Button fx:id="agregarCiudadano" mnemonicParsing="false" prefHeight="25.0" prefWidth="438.0" text="Agregar nuevo ciudadano" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Label fx:id="feedbackAddSingleCitizen" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="191.0" prefWidth="429.0" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="10.0" right="10.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                                <Tab text="Crear Bloque de Ciudadanos">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <HBox layoutX="10.0" layoutY="40.0" spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el edificio al agregar el bloque de ciudadanos:" wrappingWidth="304.40367126464844" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="5.0" />
+                                                                     </padding>
+                                                                     <children>
+                                                                        <ComboBox fx:id="edificioSeleccionadoBloque" prefHeight="25.0" prefWidth="460.0" />
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la cantidad de ciudadanos que desea agregar:" wrappingWidth="304.40367126464844" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Spinner fx:id="cantidadBloqueCiudadanos" editable="true" prefHeight="25.0" prefWidth="380.0" />
+                                                                        <Button fx:id="agregarCiudadanos" mnemonicParsing="false" prefHeight="25.0" prefWidth="312.0" text="Agregar Ciudadanos" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                                                                     <padding>
+                                                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                                  <HBox spacing="10.0">
+                                                                     <children>
+                                                                        <Label fx:id="feedbackAddMultipleCitizen" alignment="TOP_LEFT" prefHeight="192.0" prefWidth="429.0" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="10.0" right="10.0" top="10.0" />
+                                                                     </padding>
+                                                                  </HBox>
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                             </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="consultarCiudadanoTab" text="Consultar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el Identificador del Ciudadano a consultar:" wrappingWidth="304.40367126464844" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Spinner fx:id="consultaCiudadanoID" editable="true" prefHeight="25.0" prefWidth="380.0" />
+                                                      <Button fx:id="consultarCiudadano" mnemonicParsing="false" prefHeight="25.0" prefWidth="312.0" text="Consultar" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Label fx:id="feedbackGetCitizen" alignment="TOP_LEFT" prefHeight="192.0" prefWidth="429.0" wrapText="true" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="modificarCiudadanoTab" text="Modificar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el Identificador del Ciudadano a modificar:" wrappingWidth="304.40367126464844" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Spinner fx:id="modificarCiudadanoID" prefHeight="25.0" prefWidth="380.0" />
+                                                      <Button fx:id="cargarCiudadanoAModificar" mnemonicParsing="false" prefHeight="25.0" prefWidth="312.0" text="Cargar" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Edificio" wrappingWidth="304.40367126464844" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <ComboBox fx:id="edificioAModificarCiudadano" prefHeight="25.0" prefWidth="460.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="98.0" spacing="10.0">
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                   <children>
+                                                      <Label fx:id="feedbackModificarCiudadano" alignment="TOP_LEFT" prefHeight="192.0" prefWidth="429.0" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="eliminarCiudadanoTab" text="Eliminar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el Identificador del Ciudadano a eliminar:" wrappingWidth="304.40367126464844" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Spinner fx:id="eliminarCiudadanoID" prefHeight="25.0" prefWidth="380.0" />
+                                                      <Button fx:id="eliminarCiudadano" mnemonicParsing="false" prefHeight="25.0" prefWidth="312.0" text="Eliminar Ciudadano" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Label fx:id="feedbackEliminarUsuario" alignment="TOP_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="192.0" prefWidth="429.0" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelSimulacion" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button fx:id="accionarSimulacion" mnemonicParsing="false" onAction="#generarSimulacion" prefHeight="25.0" prefWidth="481.0" text="Generar Simulación">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <TabPane prefHeight="230.0" prefWidth="435.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                 <tabs>
+                                    <Tab text="Tareas Activadas">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ListView fx:id="simulacionTareas" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Atención de Estaciones">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ListView fx:id="simulacionAtencionEstaciones" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Reportes del Consejo">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <ListView fx:id="simulacionReportesConsejo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </AnchorPane>
+                  <AnchorPane fx:id="panelDrones" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TabPane prefHeight="242.0" prefWidth="435.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <tabs>
+                              <Tab fx:id="consultarDroneTab" text="Consultar">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox maxHeight="1.7976931348623157E308" prefHeight="236.0" prefWidth="417.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese el número de Procesador del Drone:" wrappingWidth="340.40367126464844" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                   <children>
+                                                      <Spinner fx:id="consultaDroneCPU" editable="true" prefHeight="25.0" prefWidth="480.0" />
+                                                      <Button fx:id="consultarDrone" mnemonicParsing="false" prefHeight="25.0" prefWidth="340.0" text="Consultar" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <Label fx:id="feedbackGetDrone" alignment="TOP_LEFT" prefHeight="192.0" prefWidth="429.0" wrapText="true" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </items>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="126.0" prefWidth="321.0" style="-fx-background-color: #222831;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo.neourbe.cambioPerfilControlador">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="47.0" layoutY="66.0" prefHeight="118.0" prefWidth="361.0" style="-fx-background-color: transparent; -fx-border-color: #948979; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="NEOURBE: PERFILES">
+               <font>
+                  <Font name="Tw Cen MT Bold" size="12.0" />
+               </font>
+               <fill>
+                  <LinearGradient>
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.548799991607666" green="0.7008057832717896" blue="0.9800000190734863" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6805555820465088" green="0.8935185074806213" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="351.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="118.0" prefWidth="361.0" style="-fx-background-color: #222831;">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" onMouseClicked="#abrirAdministrador" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@adminIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN">
+                           <font>
+                              <Font name="Tw Cen MT Bold" size="12.0" />
+                           </font>
+                           <fill>
+                              <LinearGradient>
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.548799991607666" green="0.7008057832717896" blue="0.9800000190734863" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.6805555820465088" green="0.8935185074806213" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="260.0" layoutY="10.0" prefHeight="118.0" prefWidth="361.0" style="-fx-background-color: #222831;">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" onMouseClicked="#abrirOperador" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@operadorIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="OPERADOR">
+                           <font>
+                              <Font name="Tw Cen MT Bold" size="12.0" />
+                           </font>
+                           <fill>
+                              <LinearGradient>
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.548799991607666" green="0.7008057832717896" blue="0.9800000190734863" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.6805555820465088" green="0.8935185074806213" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="170.0" layoutY="10.0" prefHeight="118.0" prefWidth="361.0" style="-fx-background-color: #222831;">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" onMouseClicked="#abrirGeneral" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@generalIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="GENERAL">
+                           <font>
+                              <Font name="Tw Cen MT Bold" size="12.0" />
+                           </font>
+                           <fill>
+                              <LinearGradient>
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.548799991607666" green="0.7008057832717896" blue="0.9800000190734863" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.6805555820465088" green="0.8935185074806213" blue="1.0" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
